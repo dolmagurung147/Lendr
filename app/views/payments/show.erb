@@ -1,0 +1,13 @@
+<h1><%= @payment.user.name %>'s Payment</h1>
+
+<h3>Debt:</h3>
+<%= @payment.debt.user.name %>
+<%= @payment.debt.title %>
+
+<h3>Payment Total:</h3>
+<%= @payment.payment_amount %>
+
+<h3>Comment:</h3>
+<%= @payment.comment %>
+
+<%= button_to("Delete Payment", payment_path(@payment), :method => :delete, :data => {confirm: "Are you sure you want to delete this payment?"}) %>
