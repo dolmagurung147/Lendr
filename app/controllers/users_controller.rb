@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  skip_before_action :authorized, only: [:new, :create]
+
   def index
     @users = User.all
   end
@@ -9,7 +11,12 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new
+    if logged_in?
+      redirect_to user_path(session[:user_id])
+    else
+      @user = User.new
+      render :new
+    end
   end
 
   def create
