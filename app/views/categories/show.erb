@@ -1,0 +1,9 @@
+<h1>All <%=@category.name%>: </h1>
+
+<ul>
+<% @category.debts.each do |debt|%>
+<h3><%= debt.user.name %></h3>
+  <li><%= debt.story %></li>
+  <h4><%= debt.amount %></h4>
+<% end %>
+</ul>
