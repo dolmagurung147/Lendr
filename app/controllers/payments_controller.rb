@@ -11,13 +11,16 @@ class PaymentsController < ApplicationController
 
   def new
     @payment = Payment.new
+    flash[:debt_id] = params[:debt_id]
   end
 
   def create
     payment = Payment.new(payment_params)
+    payment.debt_id = flash[:debt_id]
     debt = Debt.find(payment.debt_id)
-
+    # debt is used for validations
     if debt.amount > 0 && payment.payment_amount <= debt.amount
+      payment.user_id = current_user.id
       payment.make_payment(debt)
       payment.save
       debt.save

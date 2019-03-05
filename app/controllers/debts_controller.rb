@@ -15,8 +15,10 @@ class DebtsController < ApplicationController
   end
 
   def create
-    @debt = Debt.create(debt_params)
-    redirect_to debt_path(@debt)
+    debt = Debt.new(debt_params)
+    debt.user_id = current_user.id
+    debt.save
+    redirect_to debt_path(debt)
   end
 
   def edit

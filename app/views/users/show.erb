@@ -15,9 +15,7 @@
  </ul><br>
 <% if current_user.id == @user.id %>
   <%= button_to("Delete Account", user_path(@user), :method => :delete, :data => {confirm: "Are you sure you want to delete your account?"}) %>
-<% end %>
-
-
-<% if logged_in? %>
+  <% if logged_in? %>
   <%= button_to "Logout", sessions_path, method: :delete %>
+  <% end %>
 <% end %>

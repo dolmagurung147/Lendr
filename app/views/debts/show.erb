@@ -16,4 +16,6 @@
     <%= "NO" %>
     <% end %>
 
-<%= button_to "DELETE", @debt, method: :delete %>
+
+<%= button_to "Donate", new_payment_path, method: :get, params: { debt_id: @debt.id } %>
+<%= button_to "Delete", @debt, method: :delete %>

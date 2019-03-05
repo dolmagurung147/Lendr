@@ -5,10 +5,6 @@
 <% end %>
 
 <%= form_for(@payment) do |f| %>
-  <%= f.label :user %>
-  <%= f.collection_select(:user_id, User.all, :id, :name, prompt: true) %>
-  <%= f.label :debt %>
-  <%= f.collection_select(:debt_id, Debt.all, :id, :title, prompt: true) %>
   <%= f.label :payment_amount, "Payment Amount" %>
   <%= f.number_field :payment_amount %>
   <%= f.label :comment %>

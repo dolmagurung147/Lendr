@@ -1,8 +1,6 @@
 <h1> DEBT FORM </h1>
 
 <%= form_for @debt do |f| %>
-  <%= f.label "USERNAME: " %>
-  <%= f.collection_select(:user_id, User.all, :id, :name) %> <br>
   <%= f.label "Title: " %>
   <%= f.text_field :title %>
   <%= f.label "categories" %>
