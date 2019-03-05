@@ -27,8 +27,8 @@ home = Category.create(name: "Mortgages")
 
 Debt.destroy_all
 
-student_loan = Debt.create(user_id: dolma.id, category_id: education.id, amount: 3500.00, story: "Took out a student loan to help further my career as a web developer, but I cant afford to keep up with payments. Please help me pay for it!", due_date: Date.parse("Dec 8 2015"), payback: true)
-animal_surgery = Debt.create(user_id: matt.id, category_id: vetinary.id, amount: 5000.00, story: "My goldfish needs a new bionic tail, but its too expensive please help me pay for my little pals surgery.", due_date: Date.parse("Jan 28 2018"), payback: false)
-medical_debt = Debt.create(user_id: eric.id, category_id: medical.id, amount: 1500.00, story: "Im having cybernetics installed throughout my body. Cant afford it... help please", due_date: Date.parse("April 21 2019"), payback: false)
-personal_debt = Debt.create(user_id: josh.id, category_id: personal.id, amount: 20000.00, story: "Want to buy steve jobs' coffin", due_date: Date.parse("March 31 2019"), payback: true)
-another_student = Debt.create(user_id: brianna.id, category_id: education.id, amount: 10000.00, story: "Took out a student loan to help further my career as a web developer, but I cant afford to keep up with payments. HEEELLLLPPPPP!!!", due_date: Date.parse("Feb 15 2025"), payback: false)
+student_loan = Debt.create(user_id: dolma.id, category_id: education.id, amount: 3500.00, story: "Took out a student loan to help further my career as a web developer, but I cant afford to keep up with payments. Please help me pay for it!", due_date: Date.parse("Dec 8 2015"), payback: true, title: "Dolma's Schooling Debt")
+animal_surgery = Debt.create(user_id: matt.id, category_id: vetinary.id, amount: 5000.00, story: "My goldfish needs a new bionic tail, but its too expensive please help me pay for my little pals surgery.", due_date: Date.parse("Jan 28 2018"), payback: false, title: "Help Goldy")
+medical_debt = Debt.create(user_id: eric.id, category_id: medical.id, amount: 1500.00, story: "Im having cybernetics installed throughout my body. Cant afford it... help please", due_date: Date.parse("April 21 2019"), payback: false, title: "Eric's cybernetics surgery")
+personal_debt = Debt.create(user_id: josh.id, category_id: personal.id, amount: 20000.00, story: "Want to buy steve jobs' coffin", due_date: Date.parse("March 31 2019"), payback: true, title: "Need to buy this!")
+another_student = Debt.create(user_id: brianna.id, category_id: education.id, amount: 10000.00, story: "Took out a student loan to help further my career as a web developer, but I cant afford to keep up with payments. HEEELLLLPPPPP!!!", due_date: Date.parse("Feb 15 2025"), payback: false, title: "Brianna's School Debt")

@@ -37,6 +37,6 @@ class DebtsController < ApplicationController
 
   private
     def debt_params
-      params.require(:debt).permit(:user_id, :category_id, :amount, :story, :due_date, :payback)
+      params.require(:debt).permit(:user_id, :category_id, :amount, :story, :due_date, :payback, :title)
     end
 end

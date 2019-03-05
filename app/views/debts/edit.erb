@@ -3,6 +3,8 @@
 <%= form_for @debt do |f| %>
   <%= f.label "USERNAME: " %>
   <%= f.collection_select(:user_id, User.all, :id, :name) %> <br>
+  <%= f.label "Title: " %>
+  <%= f.text_field :title %>
   <%= f.label "categories" %>
   <%= f.collection_select(:category_id, Category.all, :id, :name) %>
   <%= f.label "Amount: " %>
@@ -12,6 +14,6 @@
   <%= f.label "Due Date: " %>
   <%= f.datetime_field :due_date %>
   <%= f.label "Payback? :" %>
-  <%= f.check_box :duedate %>
+  <%= f.check_box :payback %>
   <%= f.submit %>
 <% end %>
