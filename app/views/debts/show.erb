@@ -1,0 +1,17 @@
+
+<label> Debtee: </label>
+   <%= debt.user.name %>   <br>
+<label> Debt Category: </label>
+    <%= debt.category.name %> <br>
+<label> Debt Amount: </label>
+    <%= debt.amount %> <br>
+<label> Debt story: </label>
+    <%= debt.story %> <br>
+<label> Debt Due Date: </label>
+    <%= debt.due_date %> <br>
+<label> Is this debtee able to pay? : </label>
+    <%if payback %>
+    <%= "YES" %>
+    <% else %>
+    <%= "NO" %>
+    <% end %>

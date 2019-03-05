@@ -1,0 +1,10 @@
+<h1> ALL OF THE DEBTS </h1>
+<ul>
+
+<% @debts.each do |debt|%>
+  <li><label> Debtee: </label>
+     <%= link_to debt.user.name, debt_path(debt) %></li>
+  <li><label> Debt Category: </label>
+      <%= debt.category.name %></li>
+  <% end %>
+</ul>
