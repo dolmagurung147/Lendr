@@ -1,5 +1,9 @@
 <h1>New Payment:</h1>
 
+<% if flash[:errors] %>
+  <p><%= flash[:errors] %></p>
+<% end %>
+
 <%= form_for(@payment) do |f| %>
   <%= f.label :user %>
   <%= f.collection_select(:user_id, User.all, :id, :name, prompt: true) %>

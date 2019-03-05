@@ -11,13 +11,22 @@ class PaymentsController < ApplicationController
 
   def new
     @payment = Payment.new
-
   end
 
   def create
-    payment = Payment.create(payment_params)
+    payment = Payment.new(payment_params)
+    debt = Debt.find(payment.debt_id)
 
-    redirect_to payment_path(payment)
+    if debt.amount > 0 && payment.payment_amount <= debt.amount
+      payment.make_payment(debt)
+      payment.save
+      debt.save
+      redirect_to payment_path(payment)
+    else
+      flash[:errors] = "Payment invalid!"
+
+      redirect_to new_payment_path
+    end
   end
 
   def destroy
