@@ -32,7 +32,7 @@ class PaymentsController < ApplicationController
     payment = Payment.find(params[:id])
     payment.destroy
 
-    redirect_to payments_path
+    redirect_to user_path(current_user)
   end
 
   private

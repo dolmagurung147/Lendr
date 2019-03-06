@@ -24,4 +24,11 @@ class User < ApplicationRecord
     end
     all_reimbursements
   end
+
+  def all_debts_associated_with_donation
+    self.payments.map do |payment|
+      payment.debt
+    end.uniq
+  end
+
 end
