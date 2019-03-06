@@ -13,7 +13,7 @@
      <li><%= link_to(debt.title, debt_path(debt))%> - <%=debt.amount%></li>
    <% end %>
  </ul><br>
- <!--Some method that returns total --><h3>Debt Total: </h3><%= current_user.total %>
+ <!--Some method that returns total --><h3>Debt Total: </h3><%= @user.total %>
 <% if current_user.id == @user.id %>
   <%= button_to("Delete Account", user_path(@user), :method => :delete, :data => {confirm: "Are you sure you want to delete your account?"}) %>
   <%= button_to("Edit Account", edit_user_path(@user), :method => :get) %>
@@ -21,3 +21,18 @@
   <%= button_to "Logout", sessions_path, method: :delete %>
   <% end %>
 <% end %>
+
+<br>
+
+<h3>Reimbursements</h3>
+
+<ol>
+<% @user.all_reimbursements.each do |reimbursement| %>
+<li><%= reimbursement.debt.title %></li>
+<ul>
+  <li><%= reimbursement.user.name %></li>
+  <li><%= reimbursement.payment_amount %></li>
+
+</ul>
+<% end %>
+</ol>
