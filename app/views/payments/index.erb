@@ -1,8 +1,0 @@
-<h1>All Payments: </h1>
-
-<ul>
-  <% @payments.each do |payment| %>
-    <li><%= payment.user.name %> - <%= payment.payment_amount %></li>
-    <p><%= payment.comment %></p>
-  <% end %>
-</ul>

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :payments, only: [:new, :create, :show, :index, :destroy]
+  resources :payments, only: [:new, :create, :show, :destroy]
   resources :debts
   resources :users, except: :new
   resources :categories, only: [:index, :show]

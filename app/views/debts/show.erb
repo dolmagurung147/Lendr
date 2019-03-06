@@ -4,7 +4,7 @@
 <label> Debt Category: </label>
     <%= @debt.category.name %> <br>
 <label> Debt Amount: </label>
-    <%= @debt.amount %> <br>
+    <%= "$ #{@debt.amount}" %> <br>
 <label> Debt story: </label>
     <%= @debt.story %> <br>
 <label> Debt Due Date: </label>
@@ -15,6 +15,15 @@
     <% else %>
     <%= "NO" %>
     <% end %>
+
+
+<h3>Donations made on this debt: </h3>
+<ol>
+  <% @debt.payments.each do |payment| %>
+  <li><%= "#{payment.user.name} - $#{payment.payment_amount}" %></li>
+  <p><%= payment.comment %></p>
+  <% end %>
+</ol>
 
 
 <% if current_user.id == @debt.user.id %>
