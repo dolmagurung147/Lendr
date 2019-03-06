@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   post 'sessions', to: 'sessions#create', as: 'sessions'
   delete 'sessions', to: 'sessions#destroy'
 
+  get '/', to: 'pages#landing', as: 'landing'
+
 end

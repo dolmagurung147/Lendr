@@ -1,9 +1,12 @@
 class SessionsController < ApplicationController
     skip_before_action :authorized, only: [:new, :create]
 
-
   def new
-    render :new
+    if !logged_in?
+      render :new
+    else
+      redirect_to user_path(current_user)
+    end
   end
 
   def create
@@ -19,7 +22,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session.delete(:user_id)
-    redirect_to login_path
+    redirect_to landing_path
   end
 
 end

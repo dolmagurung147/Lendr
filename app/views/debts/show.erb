@@ -17,5 +17,8 @@
     <% end %>
 
 
-<%= button_to "Donate", new_payment_path, method: :get, params: { debt_id: @debt.id } %>
+<% if current_user.id == @debt.user.id %>
 <%= button_to "Delete", @debt, method: :delete %>
+<% else %>
+<%= button_to "Donate", new_payment_path, method: :get, params: { debt_id: @debt.id } %>
+<% end %>

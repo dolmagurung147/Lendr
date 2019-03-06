@@ -5,6 +5,8 @@
 <% end %>
 
 <%= form_for(@payment) do |f| %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :debt_id, value: @debt.id %>
   <%= f.label :payment_amount, "Payment Amount" %>
   <%= f.number_field :payment_amount %>
   <%= f.label :comment %>
