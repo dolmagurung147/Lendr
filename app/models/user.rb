@@ -1,8 +1,7 @@
 class User < ApplicationRecord
-
-  has_many :debts
+  has_many :debts, dependent: :destroy
   has_many :categories, through: :debts
-  has_many :payments
+  has_many :payments, dependent: :destroy
   has_secure_password
 
   def total
