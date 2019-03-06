@@ -3,7 +3,7 @@
 <ul>
 <% @category.debts.each do |debt|%>
 <h3><%= debt.user.name %></h3>
-  <li><%= debt.story %></li>
+  <li><%= link_to(debt.title, debt_path(debt)) %></li>
   <h4><%= debt.amount %></h4>
 <%= button_to "Donate", new_payment_path, method: :get, params: { debt_id: debt.id } %>
 <% end %>

@@ -10,6 +10,16 @@
   </head>
 
   <body>
+    <% if logged_in? %>
+    <header>
+      <ul>
+        <li><%=link_to("Home", user_path(current_user))%></li>
+        <li><%= link_to("Debts", debts_path) %></li>
+        <li><%= link_to("Categories", categories_path) %></li>
+        <li><%= link_to("Log Out", sessions_path, method: :delete) %></li>
+      </ul>
+    <%end %>
+    </header>
     <%= yield %>
   </body>
 </html>

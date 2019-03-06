@@ -1,0 +1,15 @@
+<%= form_for @debt do |f| %>
+  <%= f.label "Title: " %>
+  <%= f.text_field :title %>
+  <%= f.label "categories" %>
+  <%= f.collection_select(:category_id, Category.all, :id, :name) %>
+  <%= f.label "Amount: " %>
+  <%= f.number_field :amount %>
+  <%= f.label "Story: " %>
+  <%= f.text_field :story %>
+  <%= f.label "Due Date: " %>
+  <%= f.datetime_field :due_date %>
+  <%= f.label "Payback? :" %>
+  <%= f.check_box :payback %>
+  <%= f.submit %>
+<% end %>
