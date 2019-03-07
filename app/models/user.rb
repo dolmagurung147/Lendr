@@ -9,6 +9,8 @@ class User < ApplicationRecord
   validates :email, presence: true
   validate :correct_date
 
+  mount_uploader :image, ImageUploader
+
   def total
     self.debts.inject(0) {|sum, debt| sum += debt.amount }
   end

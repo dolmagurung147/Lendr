@@ -22,8 +22,7 @@ class UsersController < ApplicationController
 
   def create
     user = User.create(user_params)
-    # user.date_of_birth = Date.parse(params[:date_of_birth])
-    # user.save
+
     if user.valid?
       session[:user_id] = user.id
       redirect_to user_path(user)
@@ -35,6 +34,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    @user.image.cache!
   end
 
   def update
@@ -54,6 +54,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :email, :name, :date_of_birth, :password)
+    params.require(:user).permit(:username, :email, :name, :date_of_birth, :password, :image)
   end
 end
