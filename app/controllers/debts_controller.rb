@@ -18,7 +18,7 @@ class DebtsController < ApplicationController
     debt = Debt.new(debt_params)
     debt.user_id = current_user.id
     debt.save
-    if debt.valid?
+    if debt.valid? #validation
       redirect_to debt_path(debt)
     else
       flash[:errors] = debt.errors.full_messages
