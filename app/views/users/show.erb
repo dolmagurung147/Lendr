@@ -4,9 +4,8 @@
  <p><%= @user.name %></p><br>
 <h3>Email: </h3>
  <p><%= @user.email %></p><br>
-<h3>age: </h3>
- <p><%= @user.age %></p><br>
-
+<h3>Date of Birth </h3>
+<p><%= @user.date_of_birth.strftime("%B-%d-%Y") %></p>
  <h3><%= @user.name %>'s Debts</h3>
  <ul>
    <% @user.debts.each do |debt| %>

@@ -8,7 +8,7 @@
 <label> Debt story: </label>
     <%= @debt.story %> <br>
 <label> Debt Due Date: </label>
-    <%= @debt.due_date %> <br>
+    <%= @debt.due_date.strftime("%B-%d-%Y") %> <br>
 <label> Is this debtee able to pay? : </label>
     <%if @debt.payback %>
     <%= "YES" %>

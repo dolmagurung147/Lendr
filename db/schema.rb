@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_05_162457) do
+ActiveRecord::Schema.define(version: 2019_03_07_143438) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2019_03_05_162457) do
     t.integer "category_id"
     t.float "amount"
     t.text "story"
-    t.datetime "due_date"
+    t.date "due_date"
     t.boolean "payback"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -44,9 +44,9 @@ ActiveRecord::Schema.define(version: 2019_03_05_162457) do
     t.string "email"
     t.string "name"
     t.string "password_digest"
-    t.integer "age"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "date_of_birth"
   end
 
 end

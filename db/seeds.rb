@@ -9,11 +9,11 @@
 User.destroy_all
 
 #USERS
-matt = User.create(username: "lizardmen22", email: "sotek222@yahoo.com", name: "Matthew Masiello", age: 26, password: "matt")
-dolma = User.create(username: "dol", email: "dolmagurung147@gmail.com", name: "Dolma Gurung", age: 24, password: "dol")
-brianna = User.create(username: "bdix", email: "bdix666@gmail.com", name: "Brianna Dixon", age: 26, password: "bri")
-josh = User.create(username: "gluckin_stein", email: "josh_gluck@gmail.com", name: "Josh Gluck", age: 22, password: "josh")
-eric = User.create(username: "noobert", email: "noobert93@gmail.com", name: "Eric Hardiman", age: 25, password: "eri")
+matt = User.create(username: "lizardmen22", email: "sotek222@yahoo.com", name: "Matthew Masiello", date_of_birth: "02/12/1992", password: "matt")
+dolma = User.create(username: "dol", email: "dolmagurung147@gmail.com", name: "Dolma Gurung", date_of_birth: "14/07/1994", password: "dol")
+brianna = User.create(username: "bdix", email: "bdix666@gmail.com", name: "Brianna Dixon", date_of_birth: "05/01/1992", password: "bri")
+josh = User.create(username: "gluckin_stein", email: "josh_gluck@gmail.com", name: "Josh Gluck", date_of_birth: "02/07/1995", password: "josh")
+eric = User.create(username: "noobert", email: "noobert93@gmail.com", name: "Eric Hardiman", date_of_birth: "24/02/1994", password: "eri")
 
 Category.destroy_all
 
