@@ -31,8 +31,11 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'carrierwave'
 
 # Use ActiveStorage variant
-gem 'mini_magick'
+# gem 'mini_magick'
 # gem 'mini_magick', '~> 4.8'
+
+# semantic for style
+gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

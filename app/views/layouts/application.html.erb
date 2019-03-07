@@ -4,22 +4,24 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= favicon_link_tag asset_path('favicon.ico') %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
   </head>
 
   <body>
     <% if logged_in? %>
-    <header>
-      <ul>
-        <li><%=link_to("Home", user_path(current_user))%></li>
-        <li><%= link_to("Debts", debts_path) %></li>
-        <li><%= link_to("Categories", categories_path) %></li>
-        <li><%= link_to("All Users", users_path) %></li>
-        <li><%= link_to("Log Out", sessions_path, method: :delete) %></li>
-      </ul>
+    <div class="ui pointing menu">
+        <%= link_to("Home", user_path(current_user), { class: "item" })%>
+        <%= link_to("Debts", debts_path, { class: "item" }) %>
+        <%= link_to("Categories", categories_path, { class: "item" }) %>
+        <%= link_to("All Users", users_path, { class: "item" }) %>
+        <div class="right menu">
+          <%= link_to("Log Out", sessions_path, method: :delete, class:"item") %>
+        </div>
+    </div>
     <%end %>
-    </header>
     <%= yield %>
   </body>
 </html>

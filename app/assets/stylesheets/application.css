@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+@import "semantic-ui";
+
+.ui.placeholder.segment {
+  max-width: 50%;
+  margin: auto;
+  margin-top: 15%;
+}
+
+.ultimatetitle{
+  font-size: 8em;
+  color: blue;
+  text-align: center;
+}
