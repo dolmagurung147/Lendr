@@ -28,6 +28,10 @@ body {
   border-radius: 10px;
 }
 
+#user {
+  margin: 5% auto;
+}
+
 .ui.huge.header {
   font-size: 12em;
   text-align: center;
