@@ -5,6 +5,10 @@ class User < ApplicationRecord
   has_many :payments
   has_secure_password
 
+  validates :username, uniqueness: true
+  validates :name, presence: true
+  validates :email, presence: true
+
   def total
     self.debts.inject(0) {|sum, debt| sum += debt.amount }
   end
