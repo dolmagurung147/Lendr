@@ -20,17 +20,38 @@ body {
   background-color: #F1F5F2
 }
 
+.main.ui.placeholder.segment{
+    background-color: #355834;
+}
+
 .ui.placeholder.segment {
   margin: auto;
   margin-top: 5%;
-  background-color: #355834;
   max-width: 50%;
   border-radius: 10px;
+}
+
+/* For user show page */
+
+
+.usertitle {
+  font-family: "Courier New", monospace;
+  font-size: 3em;
+}
+
+#user_button {
+  margin-left: 0
+}
+
+.user_show h1{
+  text-decoration: underline
 }
 
 #user {
   margin: 5% auto;
 }
+
+/* ----END FOR USER PAGE -------- */
 
 .ui.huge.header {
   font-size: 12em;
@@ -52,15 +73,7 @@ body {
   border-right: 1px solid rgb(0, 0, 0);
 }
 
-.usertitle {
-  font-family: "Courier New", monospace;
-  font-size: 3em;
-}
-
-#user_button {
-  margin-left: 0
-}
-
-.user_show h1{
-  text-decoration: underline
-}
+/*
+#userinfo .ui.placeholder.segment {
+  background-color: white;
+} */
