@@ -2,49 +2,55 @@
   <title>Lendr - <%= @user.username %></title>
 </head>
 
-<h1><%= @user.username %> Info: </h1>
-<%= image_tag(@user.image_url.to_s) %>
-<h3>Name: </h3>
- <p><%= @user.name %></p><br>
-<h3>Email: </h3>
- <p><%= @user.email %></p><br>
-<h3>Date of Birth </h3>
-<p><%= @user.date_of_birth.strftime("%B-%d-%Y") %></p>
- <h3><%= @user.name %>'s Debts</h3>
- <ul>
-   <% @user.debts.each do |debt| %>
-     <li><%= link_to(debt.title, debt_path(debt))%> - $<%=debt.amount%></li>
-   <% end %>
- </ul><br>
- <%= button_to "Create New Debt", new_debt_path, method: :get  %>
- <h3>Debt Total: </h3> <%= "$#{@user.total}" %>
-<% if current_user.id == @user.id %>
-  <%= button_to("Delete Account", user_path(@user), :method => :delete, :data => {confirm: "Are you sure you want to delete your account?"}) %>
-  <%= button_to("Edit Account", edit_user_path(@user), :method => :get) %>
-  <% if logged_in? %>
-  <%= button_to "Logout", sessions_path, method: :delete %>
-  <% end %>
-<% end %>
+<body>
+  <div id= "user" class="ui placeholder segment">
 
-<br>
+    <h1 class = "usertitle"><%= @user.username %>'s Info: </h1>
+    <%= image_tag(@user.image_url.to_s) %>
 
-<h3>Reimbursements</h3>
+  <div class = 'user_show'>
 
-<ol>
-<% @user.all_reimbursements.each do |reimbursement| %>
-<li><%= reimbursement.debt.title %> <%= button_to "REIMBURSE", "/payments/#{reimbursement.id}", method: :delete %></li>
-<ul>
-  <li><%= reimbursement.user.name %></li>
-  <li><%= reimbursement.payment_amount %></li>
+    <h1>Name: </h1>
+    <h3><%= @user.name %></h3><br>
+    <h1>Email: </h1>
+    <h3><%= @user.email %></h3><br>
+    <h1>Date of Birth </h1>
+    <h3><%= @user.date_of_birth.strftime("%B-%d-%Y") %></h3>
 
-</ul>
-<% end %>
-</ol>
+    <h1>Debt Total: </h1> <h3><%= "$#{@user.total}" %></h3> <br>
 
-  <h3> All Debts that I've Helped </h3>
-<ul>
-    <% @user.all_debts_associated_with_donation.each do |debt| %>
-    <li><%= debt.title %></li>
-    <%end %>
+    <h1><%= @user.name %>'s Debts</h1>
+    <ul>
+      <% @user.debts.each do |debt| %>
+      <li><h3><%= link_to(debt.title, debt_path(debt))%> - $<%=debt.amount%></h3></li>
+      <% end %>
+    </ul><br>
+    <% if current_user.id == @user.id %>
+    <%= button_to "Create New Debt", new_debt_path, method: :get, class: "ui primary button" , id: "user_button"%>
+    <%= button_to("Edit Account", edit_user_path(@user), :method => :get, class: "ui primary button", id: "user_button") %> <br>
+    <%= button_to("Delete Account", user_path(@user), :method => :delete, :data => {confirm: "Are you sure you want to delete your account?"}, class: "ui negative button", id: "user_button") %> <br>
+    <% end %>
+    <br>
 
-</ul>
+    <h1>Reimbursements</h1>
+
+    <ol>
+      <% @user.all_reimbursements.each do |reimbursement| %>
+      <li><%= reimbursement.debt.title %> <%= button_to "REIMBURSE", "/payments/#{reimbursement.id}", method: :delete %></li>
+      <ul>
+        <li><%= reimbursement.user.name %></li>
+        <li><%= reimbursement.payment_amount %></li>
+
+      </ul>
+      <% end %>
+    </ol>
+
+    <h1> All Debts that I've Helped </h1>
+    <ul>
+      <% @user.all_debts_associated_with_donation.each do |debt| %>
+      <li><%= debt.title %></li>
+      <%end %>
+    </ul>
+  </div>
+  </div>
+</body>

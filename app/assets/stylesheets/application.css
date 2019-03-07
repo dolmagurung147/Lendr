@@ -22,8 +22,25 @@
   margin-top: 15%;
 }
 
+#user {
+  margin: 5% auto;
+}
+
 .ultimatetitle{
   font-size: 8em;
   color: blue;
   text-align: center;
+}
+
+.usertitle {
+  font-family: "Courier New", monospace;
+  font-size: 3em;
+}
+
+#user_button {
+  margin-left: 0
+}
+
+.user_show h1{
+  text-decoration: underline
 }
