@@ -16,20 +16,36 @@
 
 @import "semantic-ui";
 
+body {
+  background-color: #F1F5F2
+}
+
 .ui.placeholder.segment {
-  max-width: 50%;
   margin: auto;
-  margin-top: 15%;
+  margin-top: 5%;
+  background-color: #355834;
+  max-width: 50%;
+  border-radius: 10px;
 }
 
-#user {
-  margin: 5% auto;
-}
-
-.ultimatetitle{
-  font-size: 8em;
-  color: blue;
+.ui.huge.header {
+  font-size: 12em;
   text-align: center;
+  font-family: 'Righteous', cursive;
+}
+
+.logo {
+  margin: auto 44.5%;
+}
+
+.ui.vertical.divider:before {
+  border-left: 1px solid rgb(0, 0, 0);
+  border-right: 1px solid rgb(0, 0, 0);
+}
+
+.ui.vertical.divider:after {
+  border-left: 1px solid rgb(0, 0, 0);
+  border-right: 1px solid rgb(0, 0, 0);
 }
 
 .usertitle {
