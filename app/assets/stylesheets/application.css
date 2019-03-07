@@ -77,3 +77,14 @@ body {
 #userinfo .ui.placeholder.segment {
   background-color: white;
 } */
+
+/* Start of login form */
+
+.login.form {
+  text-align: center;
+}
+
+.login.title {
+  font-family: "Courier New", monospace;
+}
+/* End of login form */
