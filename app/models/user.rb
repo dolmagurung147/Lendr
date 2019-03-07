@@ -7,6 +7,7 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
   validates :name, presence: true
   validates :email, presence: true
+  validate :correct_date
 
   def total
     self.debts.inject(0) {|sum, debt| sum += debt.amount }
@@ -32,6 +33,12 @@ class User < ApplicationRecord
     self.payments.map do |payment|
       payment.debt
     end.uniq
+  end
+
+  def correct_date
+    if self.date_of_birth >= Time.now
+      errors.add(:date_of_birth, "is invalid")
+    end
   end
 
 end
