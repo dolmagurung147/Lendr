@@ -53,6 +53,26 @@ body {
 
 /* ----END FOR USER PAGE -------- */
 
+
+/* -----FOR CATEGORY INDEX-------- */
+#category.category_index {
+    font-family: "Courier New", monospace;
+    text-decoration: underline;
+    font-size: 3em;
+    margin-left: 5% ;
+}
+
+.category_index{
+  font-family: "Courier New", monospace;
+}
+
+#lists{
+  margin-left: 5% ;
+  font-size: 2em;
+}
+
+/* ----END FOR CATEGORY INDEX -------- */
+
 .ui.huge.header {
   font-size: 12em;
   text-align: center;

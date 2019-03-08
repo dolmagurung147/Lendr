@@ -19,7 +19,7 @@
 
     <h1>Debt Total: </h1> <h3><%= "$#{@user.total}" %></h3> <br>
 
-    <h1><%= @user.name %>'s Debts</h1>
+    <h1>My Debts</h1>
     <ul>
       <% @user.debts.each do |debt| %>
       <li><h3><%= link_to(debt.title, debt_path(debt))%> - $<%=debt.amount%></h3></li>
