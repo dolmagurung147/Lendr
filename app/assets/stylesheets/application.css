@@ -33,14 +33,18 @@ body {
 .usertitle {
   font-family: "Courier New", monospace;
   font-size: 3em;
+  text-align: center;
 }
 
-#user_button {
-  margin-left: 0
-}
 
 .user_show h1{
-  text-decoration: underline
+  text-decoration: underline;
+
+}
+
+.user_show{
+  text-align: center;
+  text-decoration: none;
 }
 
 #user {

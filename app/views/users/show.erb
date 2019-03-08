@@ -4,7 +4,7 @@
 
 <body>
   <div id= "user" class="ui placeholder segment" id = "userinfo">
-    <h1 class = "usertitle"><%= @user.username %>'s Info: </h1>
+    <h1 class = "usertitle user_show"><%= @user.username %> </h1>
     <%= image_tag(@user.image_url.to_s, id: "user_image" )%>
 
   <div class = 'user_show'>
@@ -19,11 +19,11 @@
     <h1>Debt Total: </h1> <h3><%= "$#{@user.total}" %></h3> <br>
 
     <h1>My Debts</h1>
-    <ul>
+
       <% @user.debts.each do |debt| %>
-      <li><h3><%= link_to(debt.title, debt_path(debt))%> - $<%=debt.amount%></h3></li>
+      <h3><%= link_to(debt.title, debt_path(debt))%> - $<%=debt.amount%></h3>
       <% end %>
-    </ul><br>
+    <br>
     <% if current_user.id == @user.id %>
     <%= button_to "Create New Debt", new_debt_path, method: :get, class: "ui primary button" , id: "user_button"%> <br>
     <% end %>
@@ -31,29 +31,29 @@
 
     <h1>Reimbursements</h1>
 
-    <ol>
+
       <% @user.all_reimbursements.each do |reimbursement| %>
-      <li><%= reimbursement.debt.title %>
+      <h3><%= reimbursement.debt.title %></h3>
         <%= if current_user.id == @user.id
         button_to "REIMBURSE", "/payments/#{reimbursement.id}", method: :delete, class: "ui green primary button" end %></li>
-      <ul>
-        <li><%= reimbursement.user.name %></li>
-        <li><%= reimbursement.payment_amount %></li>
 
-      </ul>
+        <%= reimbursement.user.name %>
+        <%= reimbursement.payment_amount %>
+
+
       <% end %>
-    </ol>
+
 
     <h1> All Debts that I've Helped </h1>
-    <ul>
+
       <% @user.all_debts_associated_with_donation.each do |debt| %>
-      <li><%= debt.title %></li>
+      <%= debt.title %>
       <%end %>
-    </ul>
+
   </div>
   <% if current_user.id == @user.id %>
   <%= button_to("Edit Account", edit_user_path(@user), :method => :get, class: "ui primary button", id: "user_button") %> <br>
-  <%= button_to("Delete Account", user_path(@user), :method => :delete, :data => {confirm: "Are you sure you want to delete your account?"}, class: "ui negative button", id: "user_button") %> <br>
+  <%= button_to("Delete Account", user_path(@user), :method => :delete, :data => {confirm: "Are you sure you want to delete your account?"}, class: "ui negative button") %> <br>
   <% end %>
   </div>
 </body>
