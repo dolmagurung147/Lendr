@@ -34,7 +34,7 @@
     <% if current_user.id == @debt.user.id %>
     <%= button_to "Delete this debt", @debt, method: :delete, class: "ui negative button" %>
     <% else %>
-    <%= button_to "Donate", new_payment_path, method: :get, params: { debt_id: @debt.id } %>
+    <%= button_to "Donate", new_payment_path, method: :get, params: { debt_id: @debt.id }, class: "ui primary button green" %>
     <% end %>
 
 </div>
