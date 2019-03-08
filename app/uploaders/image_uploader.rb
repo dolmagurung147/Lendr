@@ -18,6 +18,8 @@ class ImageUploader < CarrierWave::Uploader::Base
     "default.png"
   end
 
+
+
   # Process files as they are uploaded:
   # process scale: [200, 300]
   #

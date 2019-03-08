@@ -30,6 +30,8 @@ gem 'bcrypt', '~> 3.1.7'
 #carrierwave for image uploading
 gem 'carrierwave'
 
+# gem 'fog-aws'
+
 # Use ActiveStorage variant
 # gem 'mini_magick'
 # gem 'mini_magick', '~> 4.8'
