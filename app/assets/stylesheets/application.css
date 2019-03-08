@@ -163,3 +163,13 @@ body {
 .users.title {
   font-family: "Courier New", monospace;
 }
+
+/* START OF EDIT */
+.edit {
+  text-align: center;
+}
+
+.edit.title {
+  font-family: "Courier New", monospace;
+}
+/* END OF EDIT */

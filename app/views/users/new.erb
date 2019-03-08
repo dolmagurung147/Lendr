@@ -4,10 +4,13 @@
 <div class="ui placeholder segment">
 
   <% if flash[:errors] %>
-  <% flash[:errors].each do |error| %>
-  <%= error %>
+    <ul>
+      <% flash[:errors].each do |error| %>
+      <li><%=  error %></li>
+      <% end %>
+    </ul>
   <% end %>
-  <% end %>
+  
 <div class="sign">
   <h1 class="sign title">Sign-Up</h1>
     <%= form_for(@user) do |f| %>

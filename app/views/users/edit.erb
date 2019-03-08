@@ -1,15 +1,21 @@
 <head>
   <title>Lendr - Edit User</title>
 </head>
-
-<h1>Edit User:</h1>
-
-<%= form_for(@user) do |f| %>
-<%= f.label :email %>
-<%= f.text_field :email %><br><br>
-<%= f.label :name %>
-<%= f.text_field :name %><br><br>
-<%= f.label :image %>
-<%= f.file_field :image, id:"file-input" %>
-<%= f.submit %>
-<% end %>
+<div class="ui placeholder segment">
+  <div class="edit">
+      <h1 class="edit title">Edit User:</h1>
+    <%= form_for(@user) do |f| %>
+    <%= f.label :email, class: "ui header" %>
+    <div class="ui input">
+      <%= f.text_field :email %><br><br>
+    </div>
+    <%= f.label :name, class: "ui header" %>
+    <div class="ui input">
+      <%= f.text_field :name %>
+    </div><br><br>
+    <%= f.label :image%>
+    <%= f.file_field :image, id:"file-input" %><br><br>
+    <%= f.submit(class: "ui primary button") %>
+    <% end %>
+  </div>
+  </div>
