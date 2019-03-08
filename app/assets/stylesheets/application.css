@@ -31,7 +31,7 @@ body {
   border-radius: 10px;
 }
 
-/* For user show page */
+/* -----START USER SHOW PAGE------- */
 
 
 .usertitle {
@@ -93,6 +93,8 @@ body {
 
 /*--------END FOR DEBTS--------  */
 
+/*-------- FOR LANDING PAGE -----  */
+
 .ui.huge.header {
   font-size: 12em;
   text-align: center;
@@ -113,14 +115,9 @@ body {
   border-right: 1px solid rgb(0, 0, 0);
 }
 
+/*-------END LANDING PAGE -------*/
 
-
-/*
-#userinfo .ui.placeholder.segment {
-  background-color: white;
-} */
-
-/* Start of login form */
+/*---------START FOR LOGIN FORM----*/
 
 .login.form {
   text-align: center;
@@ -129,10 +126,10 @@ body {
 .login.title {
   font-family: "Courier New", monospace;
 }
-/* End of login form */
+/*---------END LOGIN FORM----------*/
 
 
-/* Start of Sign Up */
+/*------------START SIGNUP FORM-------*/
 
 .sign {
   text-align: center;
@@ -142,17 +139,21 @@ body {
   font-family: "Courier New", monospace;
 }
 
-/* End of Sign up */
+/*------------END SIGNUP FORM-------*/
 
 
-/* Start of Image */
+/*---------------START OF IMAGE-------*/
 #user_image {
-  height: fit-content;
-  width: fit-content;
+  display: block;
+  max-width: 280px;
+  max-height: 350px;
+  width: auto;
+  height: auto;
   align-self: center;
   border-radius: 15px;
 }
-/* End of Image */
+/*------------END OF IMAGE-------*/
+
 
 .all.users {
   margin-left: 15px;
