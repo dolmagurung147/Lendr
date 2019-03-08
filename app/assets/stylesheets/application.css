@@ -142,3 +142,22 @@ body {
   font-family: "Courier New", monospace;
 }
 /* End of Sign up */
+
+
+/* Start of Image */
+#user_image {
+  height: fit-content;
+  width: fit-content;
+  align-self: center;
+  border-radius: 15px;
+}
+/* End of Image */
+
+.all.users {
+  margin-left: 15px;
+  text-align: center;
+}
+
+.users.title {
+  font-family: "Courier New", monospace;
+}

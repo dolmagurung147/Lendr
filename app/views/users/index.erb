@@ -2,18 +2,20 @@
   <title>Lendr - Users</title>
 </head>
 
-<h1>All Users:</h1>
+<div class="all users">
+  <h1 class="users title">All Users</h1>
 
 
-<div class="ui link cards">
-  <% @users.each do |user| %>
-      <div class="card">
-        <div class="image">
-          <%= image_tag(user.image_url.to_s) %>
-        </div>
-        <div class="content">
-          <div class="header">User Name: <%= link_to(user.username, user_path(user.id)) %></div>
-        </div>
+  <div class="ui link cards">
+    <% @users.each do |user| %>
+    <div class="card">
+      <div class="image">
+        <%= image_tag(user.image_url.to_s) %>
       </div>
-  <% end %>
+      <div class="content">
+        <div class="header"><%= link_to(user.username, user_path(user.id)) %></div>
+      </div>
+    </div>
+    <% end %>
+  </div>
 </div>

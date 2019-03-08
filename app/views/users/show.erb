@@ -6,7 +6,7 @@
   <div id= "user" class="ui placeholder segment" id = "userinfo">
 
     <h1 class = "usertitle"><%= @user.username %>'s Info: </h1>
-    <%= image_tag(@user.image_url.to_s) %>
+    <%= image_tag(@user.image_url.to_s, id: "user_image" )%>
 
   <div class = 'user_show'>
 
