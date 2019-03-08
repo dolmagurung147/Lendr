@@ -88,3 +88,15 @@ body {
   font-family: "Courier New", monospace;
 }
 /* End of login form */
+
+
+/* Start of Sign Up */
+
+.sign {
+  text-align: center;
+}
+
+.sign.title {
+  font-family: "Courier New", monospace;
+}
+/* End of Sign up */

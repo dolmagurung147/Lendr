@@ -7,6 +7,7 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
   validates :name, presence: true
   validates :email, presence: true
+  validates :date_of_birth, presence: true
   validate :correct_date
 
   mount_uploader :image, ImageUploader
@@ -38,8 +39,10 @@ class User < ApplicationRecord
   end
 
   def correct_date
-    if self.date_of_birth >= Time.now
-      errors.add(:date_of_birth, "is invalid")
+    if self.date_of_birth
+      if self.date_of_birth >= Time.now
+        errors.add(:date_of_birth, "is invalid")
+      end
     end
   end
 
