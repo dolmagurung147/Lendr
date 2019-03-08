@@ -60,18 +60,38 @@ body {
     text-decoration: underline;
     font-size: 3em;
     margin-left: 5% ;
+    text-align: center;
 }
 
 .category_index{
   font-family: "Courier New", monospace;
 }
 
+#lists_one {
+  font-size: 2em;
+  text-align: center;
+}
+
 #lists{
   margin-left: 5% ;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 /* ----END FOR CATEGORY INDEX -------- */
+
+/* ----- FOR DEBTS ------------- */
+.debts {
+  text-align: center;
+  font-family: "Courier New", monospace;
+  font-size: 3em;
+}
+
+.debts_segment {
+  font-family: "Courier New", monospace;
+  font-size: 2em;
+}
+
+/*--------END FOR DEBTS--------  */
 
 .ui.huge.header {
   font-size: 12em;
@@ -92,6 +112,8 @@ body {
   border-left: 1px solid rgb(0, 0, 0);
   border-right: 1px solid rgb(0, 0, 0);
 }
+
+
 
 /*
 #userinfo .ui.placeholder.segment {

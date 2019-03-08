@@ -2,13 +2,18 @@
   <title>Lendr - Debts</title>
 </head>
 
-<h1> ALL OF THE DEBTS </h1>
-<ul>
+<h1 class = "debts"> All Debts </h1>
 
-<% @debts.each do |debt|%>
-  <li><label> Debtee: </label>
-     <%= link_to debt.user.name, debt_path(debt) %></li>
-  <li><label> Debt Category: </label>
-      <%= debt.category.name %></li>
-  <% end %>
-</ul>
+  <div class="ui placeholder segment">
+    <div class = "ui segments">
+    <h2 class = "debts_segment"><% @debts.each do |debt|%>
+    <div class = "ui blue segment">
+      <label > Debtee: </label>
+         <%= link_to debt.user.name, debt_path(debt) %> <br>
+      <label> Debt Category: </label>
+          <%= debt.category.name %> <br>
+        </div>
+      <% end %></h2>
+
+    </div>
+  </div>
