@@ -164,7 +164,7 @@ body {
   font-family: "Courier New", monospace;
 }
 
-/* START OF EDIT */
+/*------START OF EDIT---------*/
 .edit {
   text-align: center;
 }
@@ -172,4 +172,4 @@ body {
 .edit.title {
   font-family: "Courier New", monospace;
 }
-/* END OF EDIT */
+/*---------END OF EDIT----------*/
