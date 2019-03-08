@@ -2,10 +2,24 @@
   <title>Lendr - Categories</title>
 </head>
 
-<h1>All Categories:</h1>
+<h1 class = 'category_index' id = "category">All Categories:</h1>
 
-<ul>
+<br>
+
+
   <% @categories.each do |category| %>
-  <li><%= link_to(category.name, category_path(category)) %></li>
-  <% end %>
-</ul>
+  <h3 class = 'category_index' id = "lists"><% if category.name == 'Vetinary Bills' %>
+    <i class="paw icon"></i>
+    <% elsif category.name == 'Medical Bills' %>
+    <i class="ambulance icon"></i>
+    <% elsif category.name == 'Accidents' %>
+    <i class="car icon"></i>
+    <% elsif category.name == 'Student Loans' %>
+    <i class="university icon"></i>
+    <% elsif category.name == 'Personal Debts' %>
+    <i class="dollar icon"></i>
+    <% elsif category.name == 'Mortgages' %>
+    <i class="home icon"></i>
+    <% end %>
+    <%= link_to category.name, category_path(category) %></h3>
+    <% end %>
