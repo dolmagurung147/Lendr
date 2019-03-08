@@ -1,27 +1,40 @@
 <head>
   <title>Lendr - Signup</title>
 </head>
+<div class="ui placeholder segment">
 
-<h1>Sign-Up</h1>
-
-<% if flash[:errors] %>
+  <% if flash[:errors] %>
   <% flash[:errors].each do |error| %>
   <%= error %>
   <% end %>
-<% end %>
-
-<%= form_for(@user) do |f| %>
-<%= f.label :username %>
-<%= f.text_field :username %><br><br>
-<%= f.label :password %>
-<%= f.password_field :password %>
-<%= f.label :email %>
-<%= f.text_field :email %><br><br>
-<%= f.label :name %>
-<%= f.text_field :name %><br><br>
-<%= f.label :date_of_birth %>
-<%= f.date_field :date_of_birth %><br><br>
-<%= f.label :image %>
-<%= f.file_field :image %>
-<%= f.submit %>
-<% end %>
+  <% end %>
+<div class="sign">
+  <h1 class="sign title">Sign-Up</h1>
+    <%= form_for(@user) do |f| %>
+    <%= f.label :username, class: "ui header" %>
+    <div class="ui input">
+      <%= f.text_field :username %>
+    </div>
+    <%= f.label :password, class: "ui header" %>
+    <div class="ui input">
+      <%= f.password_field :password %>
+    </div><br><br>
+    <%= f.label :name, class: "ui header" %>
+    <div class="ui input">
+      <%= f.text_field :name %>
+    </div>
+    <%= f.label :email, class: "ui header" %>
+    <div class="ui input">
+      <%= f.text_field :email %>
+    </div><br><br>
+    <%= f.label :date_of_birth, class: "ui header" %>
+    <div class="ui input">
+      <%= f.date_field :date_of_birth %>
+    </div>
+    <%= f.label :image, class: "ui header" %>
+    <%= f.file_field :image%>
+    <br><br>
+    <%= f.submit(class: "ui primary button") %>
+    <% end %>
+  </div>
+</div>
