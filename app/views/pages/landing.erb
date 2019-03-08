@@ -10,16 +10,11 @@
     <div class="ui two column very relaxed stackable grid">
       <div class="column">
         <div class="ui form">
-          <div class="ui big submit button">
-            <%= link_to("Log In", login_path, method: :get) %>
-          </div>
+            <%= link_to("Log In", login_path, method: :get, class: "ui big submit button") %>
         </div>
       </div>
       <div class="middle aligned column">
-        <div class="ui big button">
-          <i class="signup icon"></i>
-          <%= link_to("Sign Up", signup_path, method: :get) %>
-        </div>
+          <%= link_to("Sign Up", signup_path, method: :get, class: "ui big button") %>
       </div>
     </div>
     <div class="ui vertical divider">
