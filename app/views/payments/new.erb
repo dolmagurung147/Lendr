@@ -2,18 +2,20 @@
   <title>Lendr - New Payment</title>
 </head>
 
-<h1>New Payment:</h1>
+<h1 id = "payments">New Payment:</h1>
 
-<% if flash[:errors] %>
-  <p><%= flash[:errors] %></p>
-<% end %>
+  <div class="ui placeholder segment" id = "payments">
+    <% if flash[:errors] %>
+      <p><%= flash[:errors] %></p>
+    <% end %>
 
-<%= form_for(@payment) do |f| %>
-  <%= f.hidden_field :user_id, value: current_user.id %>
-  <%= f.hidden_field :debt_id, value: @debt.id %>
-  <%= f.label :payment_amount, "Payment Amount" %>
-  <%= f.number_field :payment_amount %>
-  <%= f.label :comment %>
-  <%= f.text_area :comment %>
-  <%= f.submit %>
-<% end %>
+    <%= form_for(@payment) do |f| %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.hidden_field :debt_id, value: @debt.id %>
+      <h3><%= f.label :payment_amount, "Payment Amount" %></h3> <br>
+      <%= f.number_field :payment_amount %> <br>
+      <h3><%= f.label :comment %></h3> <br>
+      <%= f.text_area :comment %> <br>
+      <%= f.submit %>
+    <% end %>
+  </div>
