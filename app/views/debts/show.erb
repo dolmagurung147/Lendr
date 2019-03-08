@@ -2,22 +2,24 @@
   <title>Lendr - Debt</title>
 </head>
 
-<label> Debtee: </label>
-   <%= @debt.user.name %>   <br>
-<label> Debt Category: </label>
-    <%= @debt.category.name %> <br>
-<label> Debt Amount: </label>
-    <%= "$ #{@debt.amount}" %> <br>
-<label> Debt story: </label>
-    <%= @debt.story %> <br>
-<label> Debt Due Date: </label>
-    <%= @debt.due_date.strftime("%B-%d-%Y") %> <br>
-<label> Is this debtee able to pay? : </label>
-    <%if @debt.payback %>
+<div class="ui placeholder segment">
+
+<h2> Debtee: </h2>
+   <p><%= @debt.user.name %></p>   <br>
+<h2> Debt Category: </h2>
+    <p><%= @debt.category.name %></p> <br>
+<h2> Debt Amount: </h2>
+    <p><%= "$ #{@debt.amount}" %></p> <br>
+<h2> Debt story: </h2>
+    <p><%= @debt.story %></p> <br>
+<h2> Debt Due Date: </h2>
+    <p><%= @debt.due_date.strftime("%B-%d-%Y") %></p> <br>
+<h2> Is this debtee able to pay? : </h2>
+    <p><%if @debt.payback %>
     <%= "YES" %>
     <% else %>
     <%= "NO" %>
-    <% end %>
+    <% end %></p>
 
 
 <h3>Donations made on this debt: </h3>
@@ -30,7 +32,9 @@
 
 
 <% if current_user.id == @debt.user.id %>
-<%= button_to "Delete", @debt, method: :delete %>
+<%= button_to "Delete this debt", @debt, method: :delete %>
 <% else %>
 <%= button_to "Donate", new_payment_path, method: :get, params: { debt_id: @debt.id } %>
 <% end %>
+
+</div>
