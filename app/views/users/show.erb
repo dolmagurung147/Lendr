@@ -4,7 +4,6 @@
 
 <body>
   <div id= "user" class="ui placeholder segment" id = "userinfo">
-
     <h1 class = "usertitle"><%= @user.username %>'s Info: </h1>
     <%= image_tag(@user.image_url.to_s, id: "user_image" )%>
 
@@ -34,7 +33,9 @@
 
     <ol>
       <% @user.all_reimbursements.each do |reimbursement| %>
-      <li><%= reimbursement.debt.title %> <%= button_to "REIMBURSE", "/payments/#{reimbursement.id}", method: :delete %></li>
+      <li><%= reimbursement.debt.title %>
+        <%= if current_user.id == @user.id
+        button_to "REIMBURSE", "/payments/#{reimbursement.id}", method: :delete, class: "ui green primary button" end %></li>
       <ul>
         <li><%= reimbursement.user.name %></li>
         <li><%= reimbursement.payment_amount %></li>

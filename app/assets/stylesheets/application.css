@@ -17,11 +17,7 @@
 @import "semantic-ui";
 
 body {
-  background-color: #F1F5F2
-}
-
-.main.ui.placeholder.segment{
-    background-color: #343f58de;
+  background-color: rgba(0,128,128,0.2);
 }
 
 .ui.placeholder.segment {
@@ -173,3 +169,7 @@ body {
   font-family: "Courier New", monospace;
 }
 /*---------END OF EDIT----------*/
+
+.ui.green.primary.button {
+  background-color: green;
+}
