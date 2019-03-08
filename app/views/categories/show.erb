@@ -2,13 +2,20 @@
   <title>Lendr - <%= @category.name %></title>
 </head>
 
-<h1>All <%=@category.name%>: </h1>
+<body>
 
-<ul>
-<% @category.debts.each do |debt|%>
-<h3><%= debt.user.name %></h3>
-  <li><%= link_to(debt.title, debt_path(debt)) %></li>
-  <h4><%= debt.amount %></h4>
-<%= button_to "Donate", new_payment_path, method: :get, params: { debt_id: debt.id } %>
-<% end %>
-</ul>
+
+    <h1 class = "category_index" id = "category">All <%=@category.name%>: </h1>
+
+    <div class = "ui segments">
+      <% @category.debts.each do |debt|%>
+        <div class = "ui blue segment">
+          <h4 id = "lists" class = "category_index"> Debtee: <%= debt.user.name %> <br>
+          <%= link_to(debt.title, debt_path(debt)) %> <br>
+          <%= debt.amount %> <br>
+          <%= button_to "Donate", new_payment_path, method: :get, params: { debt_id: debt.id } %> </h4>
+          </div>
+      <% end %>
+    </div>
+
+</body>
