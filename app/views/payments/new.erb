@@ -13,9 +13,13 @@
       <%= f.hidden_field :user_id, value: current_user.id %>
       <%= f.hidden_field :debt_id, value: @debt.id %>
       <h3><%= f.label :payment_amount, "Payment Amount" %></h3> <br>
-      <%= f.number_field :payment_amount %> <br>
+      <div class="ui right labeled input">
+        <label for="amount" class="ui label">$</label>
+        <%= f.number_field :payment_amount, class:"ui basic label" %> <br>
+        <div class="ui basic label">.00</div>
+      </div>
       <h3><%= f.label :comment %></h3> <br>
-      <%= f.text_area :comment %> <br>
-      <%= f.submit %>
+        <%= f.text_area :comment%> <br>
+      <%= f.submit(class: "ui primary button green") %>
     <% end %>
   </div>

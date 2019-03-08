@@ -17,7 +17,8 @@
 @import "semantic-ui";
 
 body {
-  background-color: rgba(0,128,128,0.2);
+  /* background-color: rgba(0,128,128,0.2); */
+  background: url("user-background.jpg");
 }
 
 .bg {
