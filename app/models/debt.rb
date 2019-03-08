@@ -5,5 +5,6 @@ class Debt < ApplicationRecord
   has_many :payments
 
   validates :title, presence: true
+  validates :amount, presence: true
 
 end

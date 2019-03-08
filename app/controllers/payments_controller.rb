@@ -38,7 +38,7 @@ class PaymentsController < ApplicationController
   end
 
   def debt_validation(debt, payment)
-    if debt.amount > 0 && payment.payment_amount <= debt.amount
+    if(payment.payment_amount && debt.amount > 0 && payment.payment_amount <= debt.amount)
       payment.make_payment(debt)
       payment.save
       debt.save
@@ -49,4 +49,5 @@ class PaymentsController < ApplicationController
       redirect_to new_payment_path
     end
   end
+
 end
