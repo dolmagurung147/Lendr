@@ -105,12 +105,15 @@ body {
 
 .ui.huge.header {
   font-size: 12em;
-  text-align: center;
   font-family: 'Righteous', cursive;
 }
 
+.full-logo {
+  margin: 5% 5%;
+}
+
 .logo {
-  margin: auto 44.5%;
+  margin: auto 5.5%;
 }
 
 .ui.vertical.divider:before {
