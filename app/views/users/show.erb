@@ -27,8 +27,6 @@
     </ul><br>
     <% if current_user.id == @user.id %>
     <%= button_to "Create New Debt", new_debt_path, method: :get, class: "ui primary button" , id: "user_button"%> <br>
-    <%= button_to("Edit Account", edit_user_path(@user), :method => :get, class: "ui primary button", id: "user_button") %> <br>
-    <%= button_to("Delete Account", user_path(@user), :method => :delete, :data => {confirm: "Are you sure you want to delete your account?"}, class: "ui negative button", id: "user_button") %> <br>
     <% end %>
     <br>
 
@@ -52,5 +50,9 @@
       <%end %>
     </ul>
   </div>
+  <% if current_user.id == @user.id %>
+  <%= button_to("Edit Account", edit_user_path(@user), :method => :get, class: "ui primary button", id: "user_button") %> <br>
+  <%= button_to("Delete Account", user_path(@user), :method => :delete, :data => {confirm: "Are you sure you want to delete your account?"}, class: "ui negative button", id: "user_button") %> <br>
+  <% end %>
   </div>
 </body>
