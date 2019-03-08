@@ -47,7 +47,7 @@
     <h1> All Debts that I've Helped </h1>
 
       <% @user.all_debts_associated_with_donation.each do |debt| %>
-      <%= debt.title %>
+      <h3><%= link_to debt.title, payment_path(my_payment(@user, debt)) %></h3>
       <%end %>
 
   </div>

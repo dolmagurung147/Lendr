@@ -8,4 +8,6 @@ class Payment < ApplicationRecord
     debt.amount -= self.payment_amount
   end
 
+
+
 end
