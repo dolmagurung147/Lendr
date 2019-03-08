@@ -20,6 +20,11 @@ body {
   background-color: rgba(0,128,128,0.2);
 }
 
+.bg {
+  background-image: url('donation.jpeg');
+  background-size: cover;
+}
+
 .ui.placeholder.segment {
   margin: auto;
   margin-top: 5%;
@@ -27,6 +32,9 @@ body {
   border-radius: 10px;
 }
 
+.main.ui.placeholder.segment {
+  background-color: rgb(249, 250, 251, 0.5);
+}
 /* -----START USER SHOW PAGE------- */
 
 

@@ -1,43 +1,45 @@
 <head>
   <title>Lendr - Signup</title>
 </head>
-<div class="ui placeholder segment">
+<body class="bg">
+  <div class="ui placeholder segment">
 
-  <% if flash[:errors] %>
+    <% if flash[:errors] %>
     <ul>
       <% flash[:errors].each do |error| %>
       <li><%=  error %></li>
       <% end %>
     </ul>
-  <% end %>
-  
-<div class="sign">
-  <h1 class="sign title">Sign-Up</h1>
-    <%= form_for(@user) do |f| %>
-    <%= f.label :username, class: "ui header" %>
-    <div class="ui input">
-      <%= f.text_field :username %>
-    </div>
-    <%= f.label :password, class: "ui header" %>
-    <div class="ui input">
-      <%= f.password_field :password %>
-    </div><br><br>
-    <%= f.label :name, class: "ui header" %>
-    <div class="ui input">
-      <%= f.text_field :name %>
-    </div>
-    <%= f.label :email, class: "ui header" %>
-    <div class="ui input">
-      <%= f.text_field :email %>
-    </div><br><br>
-    <%= f.label :date_of_birth, class: "ui header" %>
-    <div class="ui input">
-      <%= f.date_field :date_of_birth %>
-    </div>
-    <%= f.label :image, class: "ui header" %>
-    <%= f.file_field :image, id:"file-input"%>
-    <br><br>
-    <%= f.submit(class: "ui primary button") %>
     <% end %>
+
+    <div class="sign">
+      <h1 class="sign title">Sign-Up</h1>
+      <%= form_for(@user) do |f| %>
+      <%= f.label :username, class: "ui header" %>
+      <div class="ui input">
+        <%= f.text_field :username %>
+      </div>
+      <%= f.label :password, class: "ui header" %>
+      <div class="ui input">
+        <%= f.password_field :password %>
+      </div><br><br>
+      <%= f.label :name, class: "ui header" %>
+      <div class="ui input">
+        <%= f.text_field :name %>
+      </div>
+      <%= f.label :email, class: "ui header" %>
+      <div class="ui input">
+        <%= f.text_field :email %>
+      </div><br><br>
+      <%= f.label :date_of_birth, class: "ui header" %>
+      <div class="ui input">
+        <%= f.date_field :date_of_birth %>
+      </div>
+      <%= f.label :image, class: "ui header" %>
+      <%= f.file_field :image, id:"file-input"%>
+      <br><br>
+      <%= f.submit(class: "ui primary button") %>
+      <% end %>
+    </div>
   </div>
-</div>
+</body>

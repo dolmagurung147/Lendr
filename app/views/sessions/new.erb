@@ -1,25 +1,27 @@
 <head>
   <title>Lendr - Log in</title>
 </head>
-<div class="ui placeholder segment">
-  <div class="login form">
-    <h1 class="login title">Log In</h1>
+<body class="bg">
+  <div class="ui placeholder segment">
+    <div class="login form">
+      <h1 class="login title">Log In</h1>
 
-    <% if flash[:notice] %>
-    <p><%= flash[:notice] %></p>
-    <% end %>
+      <% if flash[:notice] %>
+      <p><%= flash[:notice] %></p>
+      <% end %>
 
 
-    <%= form_tag sessions_path do %>
-    <h2 class="login ui header"><%= label_tag "Username" %></h2>
-    <div class="ui input">
-      <%= text_field_tag :username%>
+      <%= form_tag sessions_path do %>
+      <h2 class="login ui header"><%= label_tag "Username" %></h2>
+      <div class="ui input">
+        <%= text_field_tag :username%>
+      </div>
+      <h2 class="login ui header"><%= label_tag "Password" %></h2>
+      <div class="ui input">
+        <%= password_field_tag :password %>
+      </div><br><br>
+      <%= submit_tag "Sign In", class: "ui primary button" %>
+      <% end %>
     </div>
-    <h2 class="login ui header"><%= label_tag "Password" %></h2>
-    <div class="ui input">
-      <%= password_field_tag :password %>
-    </div><br><br>
-    <%= submit_tag "Sign In", class: "ui primary button" %>
-    <% end %>
   </div>
-</div>
+</body>
