@@ -1,42 +1,41 @@
 <head>
   <title>Lendr - Debt</title>
 </head>
-
 <div class="ui placeholder segment">
-<div class="edit">
-  <h2> Debtee: </h2>
-  <p><%= @debt.user.name %></p>   <br>
-  <h2> Debt Category: </h2>
-  <p><%= @debt.category.name %></p> <br>
-  <h2> Debt Amount: </h2>
-  <p><%= "$ #{@debt.amount}" %></p> <br>
-  <h2> Debt story: </h2>
-  <p><%= @debt.story %></p> <br>
-  <h2> Debt Due Date: </h2>
-  <p><%= @debt.due_date.strftime("%B-%d-%Y") %></p> <br>
-  <h2> Is this debtee able to pay? : </h2>
-  <p><%if @debt.payback %>
-    <%= "YES" %>
-    <% else %>
-    <%= "NO" %>
-    <% end %></p>
+  <div class="edit">
+    <h2> Debtee: </h2>
+    <p><%= @debt.user.name %></p>   <br>
+    <h2> Debt Category: </h2>
+    <p><%= @debt.category.name %></p> <br>
+    <h2> Debt Amount: </h2>
+    <p><%= "$ #{@debt.amount}" %></p> <br>
+    <h2> Debt story: </h2>
+    <p><%= @debt.story %></p> <br>
+    <h2> Debt Due Date: </h2>
+    <p><%= @debt.due_date.strftime("%B-%d-%Y") %></p> <br>
+    <h2> Is this debtee able to pay? : </h2>
+    <p><%if @debt.payback %>
+      <%= "YES" %>
+      <% else %>
+      <%= "NO" %>
+      <% end %></p>
 
 
-    <h3>Donations made on this debt: </h3>
-    <ol>
-      <% @debt.payments.each do |payment| %>
-      <li><%= "#{payment.user.name} - $#{payment.payment_amount}" %></li>
-      <p><%= payment.comment %></p>
+      <h3>Donations made on this debt: </h3>
+      <ol>
+        <% @debt.payments.each do |payment| %>
+        <li><%= "#{payment.user.name} - $#{payment.payment_amount}" %></li>
+        <p><%= payment.comment %></p>
+        <% end %>
+      </ol>
+
+
+      <% if current_user.id == @debt.user.id %>
+      <%= button_to "Delete this debt", @debt, method: :delete, class: "ui negative button" %>
+      <% else %>
+      <%= button_to "Donate", new_payment_path, method: :get, params: { debt_id: @debt.id }, class: "ui primary button green" %>
       <% end %>
-    </ol>
 
-
-    <% if current_user.id == @debt.user.id %>
-    <%= button_to "Delete this debt", @debt, method: :delete, class: "ui negative button" %>
-    <% else %>
-    <%= button_to "Donate", new_payment_path, method: :get, params: { debt_id: @debt.id }, class: "ui primary button green" %>
-    <% end %>
-
-</div>
+  </div>
 
 </div>

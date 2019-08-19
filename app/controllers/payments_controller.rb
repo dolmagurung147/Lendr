@@ -1,4 +1,5 @@
 class PaymentsController < ApplicationController
+  before_action :find_payment, only: %i[show destroy]
 
 
   def show
@@ -25,9 +26,7 @@ class PaymentsController < ApplicationController
   end
 
   def destroy
-    payment = Payment.find(params[:id])
-    payment.destroy
-
+    @payment.destroy
     redirect_to user_path(current_user)
   end
 
@@ -48,6 +47,10 @@ class PaymentsController < ApplicationController
       flash[:debt_id] = debt.id
       redirect_to new_payment_path
     end
+  end
+
+  def find_payment
+    @payment = Payment.find(params[:id])
   end
 
 end

@@ -1,14 +1,12 @@
 class DebtsController < ApplicationController
+  before_action :find_debt, only: %i[show edit update]
 
   def index
     @debts = Debt.all
     render :index
   end
 
-  def show
-    @debt = Debt.find(params[:id])
-    render :show
-  end
+  def show; end
 
   def new
     @debt = Debt.new
@@ -26,12 +24,9 @@ class DebtsController < ApplicationController
     end
   end
 
-  def edit
-    @debt = Debt.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @debt = Debt.find(params[:id])
     @debt.update(debt_params)
     redirect_to debt_path(@debt)
   end
@@ -46,4 +41,9 @@ class DebtsController < ApplicationController
     def debt_params
       params.require(:debt).permit(:user_id, :category_id, :amount, :story, :due_date, :payback, :title)
     end
+
+    def find_debt
+      @debt = Debt.find(params[:id])
+    end
 end
+

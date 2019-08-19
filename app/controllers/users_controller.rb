@@ -1,15 +1,12 @@
 class UsersController < ApplicationController
-
-
   skip_before_action :authorized, only: [:new, :create]
+  before_action :find_user, only: %i[show edit update destroy]
 
   def index
     @users = User.all
   end
 
-  def show
-    @user = User.find(params[:id])
-  end
+  def show; end
 
   def new
     if logged_in?
@@ -32,22 +29,15 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit
-    @user = User.find(params[:id])
-    # @user.image.cache!
-  end
+  def edit; end
 
   def update
-    user = User.find(params[:id])
-    user.update(user_params)
-
-    redirect_to user_path(user)
+    @user.update(user_params)
+    redirect_to user_path(@user)
   end
 
   def destroy
-    user = User.find(params[:id])
-    user.destroy
-
+    @user.destroy
     redirect_to users_path
   end
 
@@ -56,4 +46,8 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:username, :email, :name, :date_of_birth, :password, :image)
   end
+
+  def find_user
+    @user = User.find(params[:id])
+  end 
 end
